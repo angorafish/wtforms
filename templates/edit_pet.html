@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Pet</title>
+</head>
+<body>
+    <h1>Edit Pet: {{ pet.name }}</h1>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        Photo URL: {{ form.photo_url() }}
+        {% if form.photo_url.errors %}
+            {% for error in form.photo_url.errors %}
+                <div style="color:red;">{{ error }}</div>
+            {% endfor %}
+        {% endif %}
+        <br>
+        Notes: {{ form.notes() }}
+        {% if form.notes.errors %}
+        {% for error in form.notes.errors %}
+            <div style="color:red;">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+        <br>
+        Available: {{ form.available() }}
+        {% if form.available.errors %}
+        {% for error in form.available.errors %}
+            <div style="color:red;">{{ error }}</div>
+        {% endfor %}
+    {% endif %}
+        <br>
+        <input type="submit" value="Update">
+    </form>
+    <a href="/">Back to Homepage</a>
+</body>
+</html>
