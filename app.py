@@ -6,7 +6,7 @@ from forms import AddPetForm, EditPetForm
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///pets.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SECRET_KEY'] = 'vnc-HdTnWbqHyaLcA77l8lZw349R6kpB'
+app.config['SECRET_KEY'] = ''
 toolbar = DebugToolbarExtension(app)
 
 db = SQLAlchemy(app)
